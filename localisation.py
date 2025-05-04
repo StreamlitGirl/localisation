@@ -75,8 +75,7 @@ def changeAddress():
                 
                 
                 connection.commit()
-                success = True
-                msg = "location successfully updated"
+               
             else:
                 success = False
                 msg = "Probleme de requete SQL"
