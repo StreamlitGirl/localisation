@@ -62,9 +62,9 @@ def changeAddress():
                 if sqlVerif:
                     cursorVerif =  connection.cursor()
                     cursorVerif.execute(sqlVerif, (location, mail))
-                    verifier = cursorVerif.fetchall();
+                    verifier = cursorVerif.fetchone();
                     if verifier:
-                        msg = verifier[0][0]
+                        msg = verifier[0]
                         success = True
                     else :
                         msg = "update n a pas réussie ";
