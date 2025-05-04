@@ -12,10 +12,10 @@ def getAdress():
     mail = request.args.get('mail')
     try:
         connection = mysql.connector.connect(
-            host='127.0.0.1',
+            host='mysql.railway.internal',
             user="root",
-            password="istic.glsi3",
-            database="monpfe"
+            password="waNRyNtpGEtXaaqQiDPCuACUAPhsFLZS",
+            database="railway"
         )
         if connection.is_connected():
             sql = f"SELECT location FROM docteur WHERE Mail = %s"
