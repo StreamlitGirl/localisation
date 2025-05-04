@@ -58,7 +58,7 @@ def changeAddress():
             if sql:
                 cursor = connection.cursor()
                 cursor.execute(sql, (location, mail))
-                sqlVerif =  f"SELECT location FROM docteur WHERE Mail = %s""
+                sqlVerif =  f"SELECT location FROM docteur WHERE Mail = %s"
                 if sqlVerif:
                     cursorVerif =  connection.cursor()
                     cursorVerif.execute(sqlVerif, ( mail,))
