@@ -58,6 +58,22 @@ def changeAddress():
             if sql:
                 cursor = connection.cursor()
                 cursor.execute(sql, (location, mail))
+                sqlVerif = f"select * from docteur where location = %s and Mail = %s"
+                if sqlVerif:
+                    cursorVerif =  connection.cursor()
+                    cursorVerif.execute(sqlVerif, (location, mail))
+                    verifier = cursorVerif.fetchall();
+                    if verifier:
+                        msg = verifier[0][0]
+                        success = True
+                    else :
+                        msg = "update n a pas réussie ";
+                        success = False;
+                        
+                
+                    
+                
+                
                 connection.commit()
                 success = True
                 msg = "location successfully updated"
